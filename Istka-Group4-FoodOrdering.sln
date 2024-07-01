@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34701.34
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domains", "Domains", "{A35A2279-85DD-442A-9C5E-77612094EA14}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructures", "Infrastructures", "{06ED1D1D-A19F-467D-B528-0AADACC1C1F9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentations", "Presentations", "{0AA89BD7-E9BF-46B5-842F-F7D9FD41A4B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Istka-Group4-FoodOrdering-Entity", "Istka-Group4-FoodOrdering-Entity\Istka-Group4-FoodOrdering-Entity.csproj", "{B552EEE9-94A2-4442-947F-A3F16B87B604}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Istka-Group4-FoodOrdering-DataAccess", "Istka-Group4-FoodOrdering-DataAccess\Istka-Group4-FoodOrdering-DataAccess.csproj", "{724C736A-5B22-4852-9519-629B71A5FE99}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Istka-Group4-FoodOrdering-Service", "Istka-Group4-FoodOrdering-Service\Istka-Group4-FoodOrdering-Service.csproj", "{49EFD039-2FB0-4548-8477-F3FC680E4A08}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Istka-Group4-FoodOrdering-WebMvcUI", "Istka-Group4-FoodOrdering-WebMvcUI\Istka-Group4-FoodOrdering-WebMvcUI.csproj", "{962F40B6-375D-47A0-9756-B0FF29F00889}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B552EEE9-94A2-4442-947F-A3F16B87B604}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B552EEE9-94A2-4442-947F-A3F16B87B604}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B552EEE9-94A2-4442-947F-A3F16B87B604}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B552EEE9-94A2-4442-947F-A3F16B87B604}.Release|Any CPU.Build.0 = Release|Any CPU
+		{724C736A-5B22-4852-9519-629B71A5FE99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{724C736A-5B22-4852-9519-629B71A5FE99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{724C736A-5B22-4852-9519-629B71A5FE99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{724C736A-5B22-4852-9519-629B71A5FE99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49EFD039-2FB0-4548-8477-F3FC680E4A08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49EFD039-2FB0-4548-8477-F3FC680E4A08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49EFD039-2FB0-4548-8477-F3FC680E4A08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49EFD039-2FB0-4548-8477-F3FC680E4A08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{962F40B6-375D-47A0-9756-B0FF29F00889}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{962F40B6-375D-47A0-9756-B0FF29F00889}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{962F40B6-375D-47A0-9756-B0FF29F00889}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{962F40B6-375D-47A0-9756-B0FF29F00889}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B552EEE9-94A2-4442-947F-A3F16B87B604} = {A35A2279-85DD-442A-9C5E-77612094EA14}
+		{724C736A-5B22-4852-9519-629B71A5FE99} = {06ED1D1D-A19F-467D-B528-0AADACC1C1F9}
+		{49EFD039-2FB0-4548-8477-F3FC680E4A08} = {06ED1D1D-A19F-467D-B528-0AADACC1C1F9}
+		{962F40B6-375D-47A0-9756-B0FF29F00889} = {0AA89BD7-E9BF-46B5-842F-F7D9FD41A4B0}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B6DE7F0B-6E8B-417E-A86B-815D3FA629FF}
+	EndGlobalSection
+EndGlobal
