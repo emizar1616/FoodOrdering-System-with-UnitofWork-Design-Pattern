@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Istka_Group4_FoodOrdering_DataAccess.Identity;
 using Istka_Group4_FoodOrdering_Entity.Entities;
 using Istka_Group4_FoodOrdering_Entity.ViewModels;
 using System;
@@ -19,6 +20,9 @@ namespace Istka_Group4_FoodOrdering_Service.Mapping
             CreateMap<Product,ProductViewModel>().ReverseMap();
             CreateMap<ProductSale,ProductSaleViewModel>().ReverseMap();
             CreateMap<ProductSaleDetail , ProductSaleDetailViewModel>().ReverseMap();
+            CreateMap<Card,CardViewModel>().ReverseMap();
+            CreateMap<AppUser, UserViewModel>().ReverseMap();
+            CreateMap<AppUser, LoginViewModel>().ReverseMap();
         }
 
     }

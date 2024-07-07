@@ -76,5 +76,10 @@ namespace Istka_Group4_FoodOrdering_DataAccess.Repositories
         {
             _dbSet.Update(entity);
         }
+
+        //async Task IRepository<T>.UpdateAsync(T entity)
+        //{
+        //    await _dbSet.Update(entity);
+        //}
     }
 }

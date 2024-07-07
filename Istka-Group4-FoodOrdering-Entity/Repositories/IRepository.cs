@@ -14,6 +14,7 @@ namespace Istka_Group4_FoodOrdering_Entity.Repositories
         Task<T> GetByIdAsync(int id);
         Task<T> Get(Expression<Func<T, bool>> filter);
         Task Add(T entity);
+        //Task UpdateAsync(T entity);
         void Update(T entity);
         void Delete(int id);
         void Delete(T entity);

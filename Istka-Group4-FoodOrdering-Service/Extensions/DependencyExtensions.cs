@@ -1,5 +1,11 @@
 ﻿using Istka_Group4_FoodOrdering_DataAccess.Contexts;
 using Istka_Group4_FoodOrdering_DataAccess.Identity;
+using Istka_Group4_FoodOrdering_DataAccess.Repositories;
+using Istka_Group4_FoodOrdering_Entity.Repositories;
+using Istka_Group4_FoodOrdering_Entity.Services;
+using Istka_Group4_FoodOrdering_Entity.UnitOfWorks;
+using Istka_Group4_FoodOrdering_Service.Mapping;
+using Istka_Group4_FoodOrdering_Service.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -7,6 +13,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Wissen.Istka.BlogProject.App.DataAccess.UnitOfWorks;
 
 
 namespace Wissen.Istka.BlogProject.App.Service.Extensions
@@ -45,14 +52,15 @@ namespace Wissen.Istka.BlogProject.App.Service.Extensions
                     HttpOnly = true
                 };
             });
-            //services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
-            //services.AddScoped<IUnitOfWork, UnitOfWork>();
-            //services.AddScoped<IArticleService, ArticleService>();
-            //services.AddScoped<ICategoryService, CategoryService>();
-            //services.AddScoped(typeof(IAccountService), typeof(AccountService));
-            //services.AddScoped<ICommentService, CommentService>();
+            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddScoped<IProductService, ProductService>();
+            services.AddScoped<ICategoryService, CategoryService>();
+            services.AddScoped(typeof(IAccountService), typeof(AccountService));
+            services.AddScoped<IFeedbackService, FeedbackService>();
+            services.AddScoped<ICardService, CardService>();
 
-            //services.AddAutoMapper(typeof(MappingProfile));
+            services.AddAutoMapper(typeof(MappingProfile));
         }
     }
 }
