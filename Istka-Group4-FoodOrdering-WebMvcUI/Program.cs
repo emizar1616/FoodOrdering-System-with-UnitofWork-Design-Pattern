@@ -1,3 +1,7 @@
+using Istka_Group4_FoodOrdering_DataAccess.Contexts;
+using Microsoft.EntityFrameworkCore;
+using Wissen.Istka.BlogProject.App.Service.Extensions;
+
 namespace Istka_Group4_FoodOrdering_WebMvcUI
 {
     public class Program
@@ -8,6 +12,14 @@ namespace Istka_Group4_FoodOrdering_WebMvcUI
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            builder.Services.AddDbContext<FoodDbContext>(
+        options =>
+        options.UseSqlServer(builder.Configuration.GetConnectionString("ConnStr")
+    ));
+
+            builder.Services.AddExtensions();
+
 
             var app = builder.Build();
 

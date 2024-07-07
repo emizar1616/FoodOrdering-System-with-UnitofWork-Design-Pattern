@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace Istka_Group4_FoodOrdering_Entity.Entities
 {
-    public class Category : BaseEntity
+    public class Favorite : BaseEntity
     {
-        public string Name { get; set; }
-        //
-        public virtual List<Product> Products { get; set; }
+        public int ProductId { get; set; }
+        //public int UserId { get; set; }
     }
 }
