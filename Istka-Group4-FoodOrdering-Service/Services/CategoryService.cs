@@ -19,11 +19,36 @@ namespace Istka_Group4_FoodOrdering_Service.Services
         {
             _uow = uow;
             _mapper = mapper;
-        }   
-        public async Task<List<CategoryViewModel>> GetAll()
+        }
+
+		public async Task Add(CategoryViewModel model)
+		{
+			Category category = new Category();
+			category = _mapper.Map<Category>(model);
+			await _uow.GetRepository<Category>().Add(category);
+			await _uow.CommitAsync();
+		}
+
+		public async Task Delete(CategoryViewModel model)
+		{
+			Category category = new Category();
+			category = _mapper.Map<Category>(model);
+			_uow.GetRepository<Category>().Delete(category);
+			await _uow.CommitAsync();
+		}
+
+		public async Task<List<CategoryViewModel>> GetAll()
         {
             var list = await _uow.GetRepository<Category>().GetAllAsync();
             return _mapper.Map<List<CategoryViewModel>>(list);
         }
-    }
+
+		public async Task Update(CategoryViewModel model)
+		{
+			Category category = new Category();
+			category = _mapper.Map<Category>(model);
+			_uow.GetRepository<Category>().Update(category);
+			await _uow.CommitAsync();
+		}
+	}
 }

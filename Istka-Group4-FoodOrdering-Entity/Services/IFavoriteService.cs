@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace Istka_Group4_FoodOrdering_Entity.Services
 {
-    public interface ICategoryService
-    {
-        Task<List<CategoryViewModel>> GetAll();
-		Task Update(CategoryViewModel model);
-		Task Delete(CategoryViewModel model);
-		Task Add(CategoryViewModel model);
+	public interface IFavoriteService
+	{
+		Task<List<FavoriteViewModel>> GetAllByUserId(int id);
+		Task Add(FavoriteViewModel model);
+		Task Delete(FavoriteViewModel model);
+		Task Update(FavoriteViewModel model);
 	}
 }

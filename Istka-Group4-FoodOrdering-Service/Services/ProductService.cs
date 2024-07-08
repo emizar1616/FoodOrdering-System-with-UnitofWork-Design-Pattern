@@ -28,7 +28,15 @@ namespace Istka_Group4_FoodOrdering_Service.Services
             await _uow.CommitAsync();
         }
 
-        public async Task<ProductViewModel> Get(int id)
+		public async Task Delete(ProductViewModel model)
+		{
+			Product pro = new Product();
+			pro = _mapper.Map<Product>(model);
+			_uow.GetRepository<Product>().Delete(pro);
+			await _uow.CommitAsync(); 
+		}
+
+		public async Task<ProductViewModel> Get(int id)
         {
             var product = await _uow.GetRepository<Product>().GetByIdAsync(id);
             return _mapper.Map<ProductViewModel>(product);
@@ -39,5 +47,13 @@ namespace Istka_Group4_FoodOrdering_Service.Services
             var list = await _uow.GetRepository<Product>().GetAllAsync();
             return _mapper.Map<List<ProductViewModel>>(list);
         }
-    }
+
+		public async Task Update(ProductViewModel model)
+		{
+			Product pro = new Product();
+			pro = _mapper.Map<Product>(model);
+			_uow.GetRepository<Product>().Update(pro);
+			await _uow.CommitAsync();
+		}
+	}
 }

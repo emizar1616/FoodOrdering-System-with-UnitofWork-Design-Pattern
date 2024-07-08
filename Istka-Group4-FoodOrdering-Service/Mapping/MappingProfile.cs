@@ -19,10 +19,10 @@ namespace Istka_Group4_FoodOrdering_Service.Mapping
             CreateMap<Feedback,FeedbackViewModel>().ReverseMap();
             CreateMap<Product,ProductViewModel>().ReverseMap();
             CreateMap<ProductSale,ProductSaleViewModel>().ReverseMap();
-            CreateMap<ProductSaleDetail , ProductSaleDetailViewModel>().ReverseMap();
-            CreateMap<Card,CardViewModel>().ReverseMap();
+            CreateMap<ProductSaleDetail , ProductSaleDetailViewModel>().ReverseMap();          
             CreateMap<AppUser, UserViewModel>().ReverseMap();
             CreateMap<AppUser, LoginViewModel>().ReverseMap();
+            
         }
 
     }

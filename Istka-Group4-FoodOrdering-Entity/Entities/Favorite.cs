@@ -9,6 +9,6 @@ namespace Istka_Group4_FoodOrdering_Entity.Entities
     public class Favorite : BaseEntity
     {
         public int ProductId { get; set; }
-        //public int UserId { get; set; }
+        public int UserId { get; set; }
     }
 }

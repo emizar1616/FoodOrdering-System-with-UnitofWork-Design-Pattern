@@ -9,13 +9,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructures", "Infrastr
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentations", "Presentations", "{0AA89BD7-E9BF-46B5-842F-F7D9FD41A4B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Istka-Group4-FoodOrdering-Entity", "Istka-Group4-FoodOrdering-Entity\Istka-Group4-FoodOrdering-Entity.csproj", "{B552EEE9-94A2-4442-947F-A3F16B87B604}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Istka-Group4-FoodOrdering-Entity", "Istka-Group4-FoodOrdering-Entity\Istka-Group4-FoodOrdering-Entity.csproj", "{B552EEE9-94A2-4442-947F-A3F16B87B604}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Istka-Group4-FoodOrdering-DataAccess", "Istka-Group4-FoodOrdering-DataAccess\Istka-Group4-FoodOrdering-DataAccess.csproj", "{724C736A-5B22-4852-9519-629B71A5FE99}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Istka-Group4-FoodOrdering-DataAccess", "Istka-Group4-FoodOrdering-DataAccess\Istka-Group4-FoodOrdering-DataAccess.csproj", "{724C736A-5B22-4852-9519-629B71A5FE99}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Istka-Group4-FoodOrdering-Service", "Istka-Group4-FoodOrdering-Service\Istka-Group4-FoodOrdering-Service.csproj", "{49EFD039-2FB0-4548-8477-F3FC680E4A08}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Istka-Group4-FoodOrdering-Service", "Istka-Group4-FoodOrdering-Service\Istka-Group4-FoodOrdering-Service.csproj", "{49EFD039-2FB0-4548-8477-F3FC680E4A08}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Istka-Group4-FoodOrdering-WebMvcUI", "Istka-Group4-FoodOrdering-WebMvcUI\Istka-Group4-FoodOrdering-WebMvcUI.csproj", "{962F40B6-375D-47A0-9756-B0FF29F00889}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Istka-Group4-FoodOrdering-WebMvcUI", "Istka-Group4-FoodOrdering-WebMvcUI\Istka-Group4-FoodOrdering-WebMvcUI.csproj", "{962F40B6-375D-47A0-9756-B0FF29F00889}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

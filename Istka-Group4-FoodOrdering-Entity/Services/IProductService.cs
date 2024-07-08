@@ -7,12 +7,13 @@ using System.Threading.Tasks;
 
 namespace Istka_Group4_FoodOrdering_Entity.Services
 {
-    public interface IProductService
-    {
-        Task<IEnumerable<ProductViewModel>> GetAll();
-        Task<ProductViewModel> Get(int id);
-        Task Add(ProductViewModel model);
+	public interface IProductService
+	{
+		Task<IEnumerable<ProductViewModel>> GetAll();
+		Task<ProductViewModel> Get(int id);
+		Task Add(ProductViewModel model);
+		Task Update(ProductViewModel model);
+		Task Delete(ProductViewModel model);
 
-        //Burada edit veya delete yazmamışız. Fakat bunu sonrasında yapabiliyor muyuz ? Servis kısmına eklememiz gerekmiyor mu ? 
-    }
+	}
 }

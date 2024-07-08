@@ -12,8 +12,7 @@ namespace Istka_Group4_FoodOrdering_DataAccess.Contexts
 {
     public class FoodDbContext : IdentityDbContext<AppUser,AppRole,int>
     {
-        public FoodDbContext(DbContextOptions<FoodDbContext> options) : base(options) { }
-        public virtual DbSet<Card> Cards { get; set; }
+        public FoodDbContext(DbContextOptions<FoodDbContext> options) : base(options) { }      
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<Favorite> Favorites { get; set; }
         public virtual DbSet<Feedback> Feedbacks { get; set; }

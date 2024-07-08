@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace Istka_Group4_FoodOrdering_Entity.Services
 {
-    public interface ICategoryService
-    {
-        Task<List<CategoryViewModel>> GetAll();
-		Task Update(CategoryViewModel model);
-		Task Delete(CategoryViewModel model);
-		Task Add(CategoryViewModel model);
+	public interface IProductSaleService
+	{
+		Task<List<ProductSaleViewModel>> GetAll();
+		Task<ProductSaleViewModel> Get(int id);
+		Task Add(ProductSaleViewModel model);
+		
 	}
 }

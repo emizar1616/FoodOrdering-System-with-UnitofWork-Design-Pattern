@@ -59,6 +59,9 @@ namespace Wissen.Istka.BlogProject.App.Service.Extensions
             services.AddScoped(typeof(IAccountService), typeof(AccountService));
             services.AddScoped<IFeedbackService, FeedbackService>();
             services.AddScoped<ICardService, CardService>();
+            services.AddScoped<IFavoriteService, FavoriteService>();
+            services.AddScoped<IProductSaleService, ProductSaleService>();
+            services.AddScoped<IProductSaleDetailService, ProductSaleDetailService>();
 
             services.AddAutoMapper(typeof(MappingProfile));
         }
