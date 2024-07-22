@@ -1,0 +1,88 @@
+﻿@model ProductViewModel
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+
+
+<div class="row mt-5">
+    <div class="col-md-2">
+        @await Component.InvokeAsync("Categories")
+    </div>
+    <p></p>
+    <div class="col-md-10">
+        <p></p>
+        <div class="card mb-5 shadow-sm p-3">
+            <form asp-controller="Sepet" asp-action="Ekle" method="get">
+                <input type="hidden" name="Id" value="@Model.Id" />
+                <div class="card-header text-center">
+                    <h4 class="card-title">@Model.Name</h4>
+                </div>
+                <div class="row g-0">
+                    <div class="col-md-6 d-flex justify-content-center align-items-center">
+                        <img src="@Model.ImageUrl" class="img-fluid" title="@Model.Name" alt="@Model.Name" style="max-width: 100%; max-height: 300px; object-fit: contain;" />
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card-body">
+                            <p class="fs-5"><b>Ürün Hakkında:</b> @Model.Description</p>
+                            <p class="fs-5"><b>Fiyat:</b> @string.Format("{0:C2}", Model.Price)</p>
+                            <p>
+                                <input type="number" name="Adet" value="1" min="1" max="@Model.Stock" class="form-control w-25 d-inline" />
+                            </p>
+                            <button type="submit" class="btn btn-custom">
+                                Sepete At
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-plus-fill" viewBox="0 0 16 16">
+                                    <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0M9 5.5V7h1.5a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0V8H6.5a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 1 0" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="card mb-5 shadow-sm">
+            <div class="card-header">
+                <h4>Yorumlar</h4>
+            </div>
+            <div class="card-body">
+                @if (ViewBag.Feedbacks != null && ViewBag.Feedbacks.Count > 0)
+                {
+                    <ul class="list-group list-group-flush">
+                        @foreach (var feedback in ViewBag.Feedbacks)
+                        {
+                            <li class="list-group-item">
+                                <p>@feedback.Description</p>
+                                <small class="text-muted">Kullanıcı: @feedback.UserId</small>
+                            </li>
+                        }
+                    </ul>
+                }
+                else
+                {
+                    <p>Bu ürüne henüz yorum yapılmamış.</p>
+                }
+
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <div class="mt-4">
+                        <h5>Yorum Ekle</h5>
+                        <form asp-action="CreateFeedback" asp-controller="Product" method="post">
+                            <input type="hidden" name="id" value="@Model.Id" />
+                            <div class="form-group">
+                                <label for="message">Yorumunuz:</label>
+                                <textarea name="message" class="form-control" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary mt-2">Gönder</button>
+                        </form>
+                    </div>
+                }
+                else
+                {
+                    <a asp-action="Login" asp-controller="Account">Yorum eklemek için üye girişi yapınız...</a>
+                }
+            </div>
+        </div>
+    </div>
+</div>

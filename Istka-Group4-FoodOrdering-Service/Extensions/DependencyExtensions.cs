@@ -4,6 +4,7 @@ using Istka_Group4_FoodOrdering_DataAccess.Repositories;
 using Istka_Group4_FoodOrdering_Entity.Repositories;
 using Istka_Group4_FoodOrdering_Entity.Services;
 using Istka_Group4_FoodOrdering_Entity.UnitOfWorks;
+using Istka_Group4_FoodOrdering_Service.Interfaces;
 using Istka_Group4_FoodOrdering_Service.Mapping;
 using Istka_Group4_FoodOrdering_Service.Services;
 using Microsoft.AspNetCore.Http;
@@ -58,10 +59,11 @@ namespace Wissen.Istka.BlogProject.App.Service.Extensions
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped(typeof(IAccountService), typeof(AccountService));
             services.AddScoped<IFeedbackService, FeedbackService>();
-            services.AddScoped<ICardService, CardService>();
-            services.AddScoped<IFavoriteService, FavoriteService>();
-            services.AddScoped<IProductSaleService, ProductSaleService>();
             services.AddScoped<IProductSaleDetailService, ProductSaleDetailService>();
+            services.AddScoped<ISepetDetayService, SepetDetayService>();
+            services.AddScoped<IProductSaleService, ProductSaleService>();
+           
+            services.AddScoped<IInvoiceUserService, InvoiceUserService>();
 
             services.AddAutoMapper(typeof(MappingProfile));
         }

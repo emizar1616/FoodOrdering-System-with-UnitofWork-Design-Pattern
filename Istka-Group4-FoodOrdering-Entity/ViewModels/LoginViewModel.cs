@@ -10,11 +10,11 @@ namespace Istka_Group4_FoodOrdering_Entity.ViewModels
     public class LoginViewModel
     {
         [Required(ErrorMessage = "Kullanıcı adı boş geçilemez!")]
-        [Display(Name = "Kullanıcı")]
+        [Display(Name = "User Name:")]
         public string UserName { get; set; }
 
         [Required(ErrorMessage = "Şifre alanı boş geçilemez!")]
-        [Display(Name = "Şifre")]
+        [Display(Name = "Password:")]
         [DataType(DataType.Password)]
         public string Password { get; set; }
         public bool RememberMe { get; set; }

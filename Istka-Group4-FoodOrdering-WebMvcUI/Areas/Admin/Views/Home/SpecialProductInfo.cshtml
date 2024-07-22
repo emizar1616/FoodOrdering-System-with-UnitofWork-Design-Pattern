@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Istka_Group4_FoodOrdering_Entity.ViewModels.ProductViewModel>
+
+@{
+    ViewData["Title"] = "SpecialProductInfo";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 class="header-title"> Adminin Görüntüleyebildiği Ürün Bilgileri</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Product Name</th>
+            <th>Last Consumption</th>
+            <th>Stock</th>
+            <th>Discount</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.LastConsumption.ToString("dd.MM.yyyy")</td>
+                <td>@item.Stock</td>
+                <td class="text-center">
+                    @if (item.isDiscount)
+                    {
+                        <span class="badge badge-success"><i class="fas fa-check-circle"></i> Yes</span>
+                    }
+                    else
+                    {
+                        <span class="badge badge-danger"><i class="fas fa-times-circle"></i> No</span>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section Scripts {
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+}
+
+<style>
+    .header-title {
+        text-align: center;
+        margin: 20px 0;
+        padding: 10px 0;
+        border-bottom: 2px solid #ddd;
+    }
+</style>

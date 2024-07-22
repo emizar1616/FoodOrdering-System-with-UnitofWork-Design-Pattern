@@ -2,7 +2,8 @@ using Istka_Group4_FoodOrdering_WebMvcUI.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace Istka_Group4_FoodOrdering_WebMvcUI.Controllers
+
+namespace TemplateDeneme.Controllers
 {
     public class HomeController : Controller
     {
@@ -17,11 +18,21 @@ namespace Istka_Group4_FoodOrdering_WebMvcUI.Controllers
         {
             return View();
         }
-
-        public IActionResult Privacy()
+        public IActionResult Menu()
         {
             return View();
         }
+
+        public IActionResult Contact()
+        {
+            return View();
+        }
+        public IActionResult About()
+        {
+            return View();
+        }
+
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

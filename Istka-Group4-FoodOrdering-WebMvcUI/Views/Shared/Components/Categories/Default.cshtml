@@ -1,0 +1,75 @@
+﻿@model List<CategoryViewModel>
+
+<p></p>
+<div class="list-group category-sidebar">
+    <a href="/Product/Index" class="list-group-item @(ViewBag.SelectedCategoryId == null ? "active" : "")">
+        Tüm Ürünler
+    </a>
+    @foreach (var category in Model)
+    {
+        <a href="/Product/Index/@category.Id" class="list-group-item @(ViewBag.SelectedCategoryId == category.Id ? "active" : "")">
+            @category.Name
+        </a>
+    }
+</div>
+
+<style>
+    /* Kategori Side Bar */
+    .category-sidebar .list-group-item {
+        background-color: #f8f9fa;
+        border: 1px solid #ddd;
+        margin-bottom: 5px;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+        .category-sidebar .list-group-item:hover {
+            background-color: #A48CF3; 
+            color: white;
+        }
+
+        .category-sidebar .list-group-item.active {
+            background-color: #6046b6; 
+            color: white;
+            border-color: #6046b6;
+        }
+
+            .category-sidebar .list-group-item.active:hover {
+                background-color: #4834a6; 
+                border-color: #4834a6;
+            }
+
+    /* Alert */
+    .custom-alert {
+        background-color: #A48CF3; 
+        color: white;
+        border-color: #4834a6; 
+    }
+
+        .custom-alert strong {
+            color: #dcdcdc; 
+        }
+
+    /* Kart Yapısı */
+    .custom-card {
+        border: 1px solid #ddd;
+        transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    }
+
+        .custom-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-color: #6046b6; 
+        }
+
+    /* Butonlar */
+    .custom-button {
+        background-color: #6046b6;
+        border-color: #6046b6;
+        color: white;
+    }
+
+        .custom-button:hover {
+            background-color: #4834a6;
+            border-color: #4834a6;
+        }
+</style>

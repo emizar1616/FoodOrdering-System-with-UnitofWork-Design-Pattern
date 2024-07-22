@@ -18,5 +18,7 @@ namespace Istka_Group4_FoodOrdering_Entity.Repositories
         void Update(T entity);
         void Delete(int id);
         void Delete(T entity);
+
+        void AddNormal(T entity);
     }
 }

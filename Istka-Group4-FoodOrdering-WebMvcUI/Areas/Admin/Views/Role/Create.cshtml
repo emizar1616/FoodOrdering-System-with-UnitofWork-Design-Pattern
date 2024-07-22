@@ -1,0 +1,33 @@
+﻿@model Istka_Group4_FoodOrdering_Entity.ViewModels.RoleViewModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class=" text-center">
+    <h2 class=" text-center">Yeni Rol Oluşturma Sayfası</h2>
+</div>
+<p></p>
+<div class="d-flex justify-content-center">
+    <div class="card shadow-lg" style="width: 40rem;">
+        <div class="card-body">
+            <form asp-action="Create" asp-controller="Role" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label"></label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Description" class="control-label"></label>
+                    <input asp-for="Description" class="form-control" />
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+                <div class="form-group text-center">
+                    <input type="submit" value="Kaydet" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

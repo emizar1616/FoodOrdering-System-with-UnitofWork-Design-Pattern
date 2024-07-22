@@ -27,12 +27,12 @@ namespace Istka_Group4_FoodOrdering_Entity.ViewModels
         public string Email { get; set; }
 
         [Required(ErrorMessage = "Şifre alanı boş geçilemez!")]
-        [Display(Name = "Şifre")]
+        [Display(Name = "Password")]
         [DataType(DataType.Password)]
         public string Password { get; set; }
 
         [Required(ErrorMessage = "Tekrar şifresi boş geçilemez!")]
-        [Display(Name = "Şifre Tekrar")]
+        [Display(Name = "ConfirmPassword")]
         [Compare("Password", ErrorMessage = "Şifreler uyuşmuyor!")]
         [DataType(DataType.Password)]
         public string ConfirmPassword { get; set; }

@@ -1,12 +1,7 @@
 ﻿using Istka_Group4_FoodOrdering_DataAccess.Contexts;
 using Istka_Group4_FoodOrdering_Entity.Repositories;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Istka_Group4_FoodOrdering_DataAccess.Repositories
 {
@@ -14,16 +9,22 @@ namespace Istka_Group4_FoodOrdering_DataAccess.Repositories
     {
         private readonly FoodDbContext _context;
         private readonly DbSet<T> _dbSet;
+       
         public Repository(FoodDbContext context)
         {
             _context = context;
             _dbSet = _context.Set<T>();
-        }
 
+        }
 
         public async Task Add(T entity)
         {
-            await _context.SaveChangesAsync();
+            await _dbSet.AddAsync(entity);
+        }
+
+        public void AddNormal(T entity)
+        {
+            _dbSet.Add(entity);
         }
 
         public void Delete(int id)
@@ -36,7 +37,7 @@ namespace Istka_Group4_FoodOrdering_DataAccess.Repositories
         {
             _dbSet.Remove(entity);
         }
-    
+
 
         public async Task<T> Get(Expression<Func<T, bool>> filter)
         {
@@ -81,5 +82,7 @@ namespace Istka_Group4_FoodOrdering_DataAccess.Repositories
         //{
         //    await _dbSet.Update(entity);
         //}
+
+
     }
 }

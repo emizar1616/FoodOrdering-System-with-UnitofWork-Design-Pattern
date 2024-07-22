@@ -1,5 +1,8 @@
 using Istka_Group4_FoodOrdering_DataAccess.Contexts;
+using Istka_Group4_FoodOrdering_Entity.Services;
+using Istka_Group4_FoodOrdering_Service.Services;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 using Wissen.Istka.BlogProject.App.Service.Extensions;
 
 namespace Istka_Group4_FoodOrdering_WebMvcUI
@@ -14,12 +17,22 @@ namespace Istka_Group4_FoodOrdering_WebMvcUI
             builder.Services.AddControllersWithViews();
 
             builder.Services.AddDbContext<FoodDbContext>(
-        options =>
-        options.UseSqlServer(builder.Configuration.GetConnectionString("ConnStr")
-    ));
+                options => options.UseSqlServer(builder.Configuration.GetConnectionString("ConnStr"))
+            );
 
+            builder.Services.AddScoped<IProductService, ProductService>();
+            builder.Services.AddScoped<ICategoryService, CategoryService>();
+            builder.Services.AddScoped<IAccountService, AccountService>();
+
+            builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
             builder.Services.AddExtensions();
-
+            builder.Services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromMinutes(10);
+                options.Cookie.HttpOnly = true;
+                options.Cookie.IsEssential = true;
+            }
+            );
 
             var app = builder.Build();
 
@@ -27,20 +40,28 @@ namespace Istka_Group4_FoodOrdering_WebMvcUI
             if (!app.Environment.IsDevelopment())
             {
                 app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
+            app.UseSession();
+
             app.UseRouting();
 
             app.UseAuthorization();
 
+            // Configure routes
+            app.MapControllerRoute(
+                name: "areas",
+                pattern: "{area:exists}/{controller=Home}/{action=Index1}/{id?}"
+            );
+
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+                pattern: "{controller=Home}/{action=Index}/{id?}"
+            );
 
             app.Run();
         }

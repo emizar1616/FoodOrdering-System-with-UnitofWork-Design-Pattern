@@ -3,6 +3,7 @@ using Istka_Group4_FoodOrdering_DataAccess.Repositories;
 using Istka_Group4_FoodOrdering_Entity.Repositories;
 using Istka_Group4_FoodOrdering_Entity.UnitOfWorks;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,7 @@ namespace Wissen.Istka.BlogProject.App.DataAccess.UnitOfWorks
     {
         private readonly FoodDbContext _context;
         private bool disposed = false;
+        private readonly object _commitLock = new object();
         public UnitOfWork(FoodDbContext context)
         {
             _context = context;
@@ -53,6 +55,10 @@ namespace Wissen.Istka.BlogProject.App.DataAccess.UnitOfWorks
             GC.SuppressFinalize(this);  //Garbage collector u güncelleyip , bu takibi keser. Yani yazılımcı istediği zaman bu methodu kullanarak dispose edebilir. 
         }
 
+        public async Task<IDbContextTransaction> BeginTransactionAsync()
+        {
+            return await _context.Database.BeginTransactionAsync();
+        }
 
     }
 }

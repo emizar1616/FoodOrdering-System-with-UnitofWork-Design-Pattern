@@ -1,0 +1,47 @@
+﻿@* @model InvoiceViewModel
+@{
+    ViewData["Title"] = "Invoice";
+    Layout = "~/Views/Shared/_LayoutFood.cshtml";
+}
+
+<h2>Fatura</h2>
+
+<h3>Kullanıcı Bilgileri</h3>
+<p>Ad: @Model.userViewModel.FirstName</p>
+<p>Email: @Model.userViewModel.Email</p>
+<p>Telefon: @Model.userViewModel.PhoneNumber</p>
+<p>Adres: @Model.userViewModel.Address</p>
+
+<h3>Satış Bilgileri</h3>
+<p>Tarih: @Model.satisViewModel.Date.ToString("dd.MM.yyyy")</p>
+<p>Toplam Adet: @Model.satisViewModel.Quantity</p>
+<p>Toplam Fiyat: @Model.satisViewModel.Price.ToString("C")</p>
+
+<h3>Ürün Detayları</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Ürün ID</th>
+            <th>Ürün Adı</th>
+            <th>Adet</th>
+            <th>Birim Fiyatı</th>
+            <th>Toplam Fiyat</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.sepetDetayListesi)
+        {
+            <tr>
+                <td>@item.ProductId</td>
+                <td>@item.ProductName</td>
+                <td>@item.ProductQuantity</td>
+                <td>@item.ProductPrice.ToString("C")</td>
+                <td>@(item.ProductQuantity * item.ProductPrice).ToString("C")</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<p><a href="@Url.Action("Index", "Home")">Anasayfaya Dön</a></p>
+
+ *@

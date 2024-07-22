@@ -142,30 +142,44 @@ namespace Istka_Group4_FoodOrdering_DataAccess.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.HasKey("Id");
 
                     b.ToTable("Categories");
-                });
 
-            modelBuilder.Entity("Istka_Group4_FoodOrdering_Entity.Entities.Favorite", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Favorites");
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Salatalar"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Pizzalar"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Burgerler"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "Tatlılar"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Name = "İçecekler"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Name = "Deniz Ürünleri"
+                        });
                 });
 
             modelBuilder.Entity("Istka_Group4_FoodOrdering_Entity.Entities.Feedback", b =>
@@ -177,10 +191,6 @@ namespace Istka_Group4_FoodOrdering_DataAccess.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ImageSrc")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -221,7 +231,8 @@ namespace Istka_Group4_FoodOrdering_DataAccess.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
@@ -230,13 +241,77 @@ namespace Istka_Group4_FoodOrdering_DataAccess.Migrations
                         .HasColumnType("int");
 
                     b.Property<bool>("isDiscount")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(true);
 
                     b.HasKey("Id");
 
                     b.HasIndex("CategoryId");
 
                     b.ToTable("Products");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CategoryId = 3,
+                            Description = "Tavuk burger köftesi,göbek marul,mayonez",
+                            ImageUrl = "/images/chickenburger.jpg",
+                            LastConsumption = new DateTime(2024, 8, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Chicken Burger",
+                            Price = 85m,
+                            Stock = 15,
+                            isDiscount = false
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CategoryId = 3,
+                            Description = "Dana köfte,özel sos,cheddar peyniri",
+                            ImageUrl = "/images/cheeseburger.jpg",
+                            LastConsumption = new DateTime(2024, 8, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Cheese Burger",
+                            Price = 145m,
+                            Stock = 25,
+                            isDiscount = false
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CategoryId = 3,
+                            Description = "Dana köfte,barbekü sos,közlenmiş soğan",
+                            ImageUrl = "/images/bbqBurger.jpg",
+                            LastConsumption = new DateTime(2024, 8, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "BBQ Burger",
+                            Price = 200m,
+                            Stock = 20,
+                            isDiscount = true
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CategoryId = 2,
+                            Description = "Mozarella peyniri,özel sos,mantar",
+                            ImageUrl = "/images/mantarlıPizza.jpg",
+                            LastConsumption = new DateTime(2024, 8, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Mantarlı Pizza",
+                            Price = 150m,
+                            Stock = 15,
+                            isDiscount = false
+                        },
+                        new
+                        {
+                            Id = 5,
+                            CategoryId = 2,
+                            Description = "Mozarella peyniri,özel sos,sucuk",
+                            ImageUrl = "/images/sucuklupizza.jpg",
+                            LastConsumption = new DateTime(2024, 8, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Sucuklu Pizza",
+                            Price = 160m,
+                            Stock = 25,
+                            isDiscount = false
+                        });
                 });
 
             modelBuilder.Entity("Istka_Group4_FoodOrdering_Entity.Entities.ProductSale", b =>

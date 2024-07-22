@@ -1,0 +1,36 @@
+﻿@model Istka_Group4_FoodOrdering_Entity.ViewModels.RoleViewModel
+
+@{
+    ViewData["Title"] = "Delete Role";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1 class="text-center">Rol Silme Sayfası</h1>
+<hr />
+
+<div class="d-flex justify-content-center">
+
+    <div class="card shadow-lg" style="width: 40rem;">
+        <div class="card-body">
+            <h4 class="card-title">Kullanıcı Adı: @Model.Name</h4>
+            <p class="card-text"><strong>Açıklaması:</strong> @Html.DisplayFor(model => model.Description)</p>
+            <div class="alert alert-warning" role="alert">
+                <h5>Bu rolü silmek istediğinize emin misiniz?</h5>
+            </div>
+            <form asp-action="Delete" method="post">
+                <input type="hidden" asp-for="Id" />
+                <div class="text-center">
+                    <button type="submit" class="btn btn-danger">
+                        <i class="fas fa-trash-alt"></i> Sil
+                    </button>
+                    <a asp-action="Index" class="btn btn-secondary">
+                        <i class="fas fa-arrow-left"></i> Geri Dön
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Font Awesome için CDN linki -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">

@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] - Admin Panel</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/Site.css">
+    <style>
+        body {
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+            background-color: #f8f9fa;
+        }
+
+        .sidebar {
+            width: 250px;
+            background: linear-gradient(145deg, #434343, #262626);
+            color: white;
+            padding: 20px;
+            position: fixed;
+            height: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+            .sidebar h2 {
+                text-align: center;
+                margin-bottom: 30px;
+                font-size: 1.5rem;
+                font-weight: bold;
+            }
+
+            .sidebar ul {
+                list-style: none;
+                padding: 0;
+            }
+
+                .sidebar ul li {
+                    margin: 20px 0;
+                }
+
+                    .sidebar ul li a {
+                        color: white;
+                        text-decoration: none;
+                        display: block;
+                        padding: 12px;
+                        font-size: 1.1rem;
+                        font-weight: 500;
+                        border-radius: 4px;
+                        transition: background 0.3s, transform 0.3s;
+                    }
+
+                        .sidebar ul li a:hover {
+                            background: #575757;
+                            transform: scale(1.05);
+                        }
+
+        .content {
+            margin-left: 250px;
+            flex: 1;
+            padding: 20px;
+        }
+
+        .form-control {
+            margin-bottom: 10px;
+        }
+
+        .btn-primary, .btn-warning, .btn-danger, .btn-secondary {
+            margin-top: 10px;
+        }
+
+            .btn-primary:hover, .btn-warning:hover, .btn-danger:hover, .btn-secondary:hover {
+                opacity: 0.8;
+            }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Yönetici Paneli</h2>
+        <p></p>
+        <ul>
+            <li><a href="@Url.Action("Index1", "Home", new { area = "Admin" })">Ana Sayfa</a></li>
+            <li><a asp-controller="Home" asp-action="Users">Kayıtlı Kullanıcılar</a></li>
+            <li><a asp-controller="Role" asp-action="Index">Roller</a></li>
+            <li><a asp-controller="Role" asp-action="Create">Yeni Rol Ekle</a></li>
+            <li><a asp-controller="Home" asp-action="SpecialProductInfo">Özel Ürün Bilgileri</a></li>
+            <li><a asp-controller="Home" asp-action="ShowSales">Ürün Satışları</a></li>
+            <li><a asp-controller="Home" asp-action="Create">Ürün Ekleme</a></li>
+            <li><a asp-controller="Home" asp-action="Index">Ürünler</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        @RenderBody()
+    </div>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

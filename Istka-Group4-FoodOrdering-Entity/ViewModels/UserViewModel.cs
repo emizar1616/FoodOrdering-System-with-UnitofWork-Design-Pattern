@@ -12,10 +12,10 @@ namespace Istka_Group4_FoodOrdering_Entity.ViewModels
         public int Id { get; set; }
 
         [Required(ErrorMessage = "İsim alanı boş geçilemez!")]
-        public string FirstName { get; set; }
+        public string Name { get; set; }
 
         [Required(ErrorMessage = "Soyisim alanı boş geçilemez!")]
-        public string LastName { get; set; }
+        public string Surname { get; set; }
 
         [Required(ErrorMessage = "Kullanıcı adı boş geçilemez!")]
         public string UserName { get; set; }
@@ -25,5 +25,8 @@ namespace Istka_Group4_FoodOrdering_Entity.ViewModels
         [Required(ErrorMessage = "Email alanı boş geçilemez!")]
         [EmailAddress(ErrorMessage = "Email formatına uygun değil!")]
         public string Email { get; set; }
+
+        public string? Address { get; set; }
+
     }
 }

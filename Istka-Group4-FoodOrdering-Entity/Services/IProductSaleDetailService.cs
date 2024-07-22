@@ -9,9 +9,10 @@ namespace Istka_Group4_FoodOrdering_Entity.Services
 {
 	public interface IProductSaleDetailService
 	{
-		Task<List<ProductSaleDetailViewModel>> GetAll();
-		Task Add(ProductSaleDetailViewModel model);
-		Task<List<ProductSaleDetailViewModel>> GetByProductSaleId(int id);
+        Task Add(ProductSaleDetailViewModel model);
+        Task<List<ProductSaleDetailViewModel>> GetAll();
+        Task<List<ProductSaleDetailViewModel>> GetByProductSaleId(int id);
+        bool AddRange(List<SepetDetay> sepet, int productSaleId);
 
-	}
+    }
 }

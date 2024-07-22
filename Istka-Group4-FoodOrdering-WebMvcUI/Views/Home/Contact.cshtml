@@ -1,0 +1,78 @@
+﻿@{
+	ViewData["Title"] = "Contact";
+	Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+<!-- Breadcrumbs -->
+<section class="bg-gray-7">
+	<div class="breadcrumbs-custom box-transform-wrap context-dark">
+		<div class="container">
+			<h3 class="breadcrumbs-custom-title">İletişİm</h3>
+			<div class="breadcrumbs-custom-decor"></div>
+		</div>
+		<div class="box-transform" style="background-image: url(/images/contact.jpg);"></div>
+	</div>
+	<div class="container">
+		<ul class="breadcrumbs-custom-path">
+			<li><a asp-controller="Home" asp-action="Index">Ana Sayfa</a></li>
+
+			<li class="active">İletişim</li>
+		</ul>
+	</div>
+</section>
+<!-- Contacts-->
+<section class="section section-lg bg-default text-md-left">
+	<div class="container">
+		<div class="row row-60 justify-content-center">
+			<div class="col-lg-8">
+				<h4 class="text-spacing-25 text-transform-none">Konumumuz</h4>
+				<p>
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48125.96343361644!2d28.981132340392076!3d41.071774871337134!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab63f6f8193f1%3A0x36c864a929a1018c!2zQmXFn2lrdGHFny_EsHN0YW5idWw!5e0!3m2!1str!2str!4v1721291112084!5m2!1str!2str&zoom=12&maptype=satellite"
+							width="700"
+							height="450"
+							style="border:0;"
+							allowfullscreen=""
+							loading="lazy"
+							referrerpolicy="no-referrer-when-downgrade">
+					</iframe>
+
+				</p>
+			</div>
+			<div class="col-lg-4">
+				<div class="aside-contacts">
+					<div class="row row-30">
+						<div class="col-sm-6 col-lg-12 aside-contacts-item">
+							<p class="aside-contacts-title">Sosyal Medyada Bİze Katılın</p>
+							<ul class="list-inline contacts-social-list list-inline-sm">
+								<li><a class="icon mdi mdi-facebook" asp-controller="Home" asp-action="Index"></a></li>
+								<li><a class="icon mdi mdi-twitter" asp-controller="Home" asp-action="Index"></a></li>
+								<li><a class="icon mdi mdi-instagram" asp-controller="Home" asp-action="Index"></a></li>
+								<li><a class="icon mdi mdi-google-plus" asp-controller="Home" asp-action="Index"></a></li>
+							</ul>
+						</div>
+						<div class="col-sm-6 col-lg-12 aside-contacts-item">
+							<p class="aside-contacts-title">Telefon</p>
+							<div class="unit unit-spacing-xs justify-content-center justify-content-md-start">
+								<div class="unit-left"><span class="icon mdi mdi-phone"></span></div>
+								<div class="unit-body"><a class="phone" href="tel:#">+90 551 219 03 69</a></div>
+							</div>
+						</div>
+						<div class="col-sm-6 col-lg-12 aside-contacts-item">
+							<p class="aside-contacts-title">E-mail</p>
+							<div class="unit unit-spacing-xs justify-content-center justify-content-md-start">
+								<div class="unit-left"><span class="icon mdi mdi-email-outline"></span></div>
+								<div class="unit-body"><a class="mail" href="mailto:#">foodscript@gmail.com</a></div>
+							</div>
+						</div>
+						<div class="col-sm-6 col-lg-12 aside-contacts-item">
+							<p class="aside-contacts-title">Adres</p>
+							<div class="unit unit-spacing-xs justify-content-center justify-content-md-start">
+								<div class="unit-left"><span class="icon mdi mdi-map-marker"></span></div>
+								<div class="unit-body"><a class="address" href="#">Sinanpaşa, <br class="d-md-none"> Beşiktaş/İstanbul</a></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

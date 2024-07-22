@@ -15,14 +15,13 @@ namespace Istka_Group4_FoodOrdering_Service.Mapping
         public MappingProfile() 
         {
             CreateMap<Category, CategoryViewModel>().ReverseMap();
-            CreateMap<Favorite,FavoriteViewModel>().ReverseMap();
             CreateMap<Feedback,FeedbackViewModel>().ReverseMap();
             CreateMap<Product,ProductViewModel>().ReverseMap();
             CreateMap<ProductSale,ProductSaleViewModel>().ReverseMap();
             CreateMap<ProductSaleDetail , ProductSaleDetailViewModel>().ReverseMap();          
             CreateMap<AppUser, UserViewModel>().ReverseMap();
             CreateMap<AppUser, LoginViewModel>().ReverseMap();
-            
+            CreateMap<AppRole, RoleViewModel>().ReverseMap();
         }
 
     }

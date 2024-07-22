@@ -1,0 +1,61 @@
+﻿@using Istka_Group4_FoodOrdering_Entity.ViewModels
+@model LoginViewModel
+@{
+    ViewData["Title"] = "Giriş Yap";
+    Layout = "~/Views/Shared/_LayoutFood.cshtml";
+}
+
+<!-- Login 13 - Bootstrap Brain Component -->
+<section class="bg-light py-3 py-md-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5 col-xxl-4">
+                <div class="card border border-light-subtle rounded-3 shadow-sm">
+                    <div class="card-body p-3 p-md-4 p-xl-5">
+                        <div class="text-center mb-3">
+                            <h2>KULLANICI GİRİŞİ</h2>
+                        </div>
+                        <form asp-action="Login" asp-controller="Account" method="post">
+                            <div class="form-group">
+                                <label for="UserName" class="text-left w-100">Kullanıcı Adı</label>
+                                <input type="text" class="form-control" id="UserName" asp-for="UserName" placeholder="Kullanıcı Adını giriniz...">
+                                <span asp-validation-for="UserName" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="Password" class="text-left w-100">Şifre</label>
+                                <input type="password" class="form-control" id="Password" asp-for="Password" placeholder="Şifre giriniz...">
+                                <span asp-validation-for="Password" class="text-danger"></span>
+                            </div>
+                            <div class="form-group form-check">
+                                <input type="checkbox" class="form-check-input" id="RememberMe" asp-for="RememberMe">
+                                <label class="form-check-label" for="RememberMe">Beni Hatırla</label>
+                            </div>
+                            <button type="submit" class="btn btn-mor">Giriş Yap</button>
+                        </form>
+                        <form asp-action="Register" asp-controller="Account" method="get">
+                            <button type="submit" class="btn btn-mor mt-3">Yeni Kayıt</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .btn-mor {
+        background-color: #6046b6;
+        border-color: #800080;
+        color: white;
+    }
+
+        .btn-mor:hover {
+            background-color: #660066;
+            border-color: #660066;
+        }
+
+    .form-group label {
+        text-align: left;
+        display: block;
+    }
+</style>
